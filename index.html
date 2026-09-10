@@ -191,6 +191,104 @@
         section:not(.hero-gradient):not(#village-day):not(#pledge) {
             color: var(--ink);
         }
+        /* ================================
+   FULL-WIDTH HERO IMAGE
+   ================================ */
+
+.full-width-hero {
+    position: relative;
+    width: 100%;
+    height: 560px;
+    overflow: hidden;
+    background: #07182e;
+}
+
+.full-width-hero img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Elegant navy overlay */
+.full-width-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(7, 24, 46, 0.78) 0%,
+        rgba(7, 24, 46, 0.42) 45%,
+        rgba(7, 24, 46, 0.08) 100%
+    );
+    pointer-events: none;
+}
+
+.full-width-hero-content {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.full-width-hero-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 32px;
+}
+
+.full-width-hero h1 {
+    max-width: 700px;
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    font-weight: 700;
+}
+
+.full-width-hero p {
+    max-width: 650px;
+    margin: 0;
+    color: #f5eedf;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .full-width-hero {
+        height: 480px;
+    }
+
+    .full-width-hero::after {
+        background: linear-gradient(
+            180deg,
+            rgba(7, 24, 46, 0.18) 0%,
+            rgba(7, 24, 46, 0.78) 75%,
+            rgba(7, 24, 46, 0.92) 100%
+        );
+    }
+
+    .full-width-hero-inner {
+        padding: 30px 22px;
+        align-self: flex-end;
+    }
+
+    .full-width-hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .full-width-hero p {
+        font-size: 1rem;
+    }
+}
 
         /* Data and Baby Brain Matrix: explicitly cream with black text */
         #data,
@@ -413,6 +511,12 @@
     </header>
 
     <!-- HERO SECTION -->
+    <section class="full-width-hero">
+    <img
+        src="images/aarambh-hero.jpg"
+        alt="AARAMBH 1000"
+    >
+</section>
     <section class="hero-gradient text-white relative overflow-hidden py-16 lg:py-24 border-b border-navy-800">
         <!-- Background Glow Accents -->
         <div class="absolute -top-12 -right-12 w-96 h-96 bg-navy-500/20 rounded-full blur-3xl pointer-events-none"></div>
