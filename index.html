@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AARAMBH 1000 — First 1,000 Days Community Health & Wellbeing Programme</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Outfit & Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f1f5f9',
+                            100: '#e2e8f0',
+                            200: '#cbd5e1',
+                            300: '#94a3b8',
+                            400: '#64748b',
+                            500: '#334155',
+                            600: '#1e293b',
+                            700: '#142a47',
+                            800: '#0b1f3a',
+                            900: '#07182e',
+                            950: '#04101f',
+                        },
+                        cream: {
+                            400: '#f5eedf',
+                            500: '#eadfca',
+                        },
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f5eedf;
+            color: #111111;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.015em;
+        }
+        .hero-gradient {
+            background: #0b1f3a;
+        }
+        .green-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #dcfce7;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #16a34a;
+            border-radius: 10px;
+        }
+    
+        /* =========================================================
+           AARAMBH 1000 — NAVY / CREAM DESIGN SYSTEM
+           Restrained palette: Navy + Cream + Black/White neutrals
+           ========================================================= */
+        :root {
+            --navy: #0b1f3a;
+            --navy-deep: #07182e;
+            --navy-soft: #142a47;
+            --cream: #f5eedf;
+            --cream-deep: #eadfca;
+            --ink: #111111;
+            --white: #ffffff;
+        }
+
+        /* Elegant navigation */
+        header {
+            background: rgba(7, 24, 46, 0.97) !important;
+            border-bottom: 1px solid rgba(245, 238, 223, 0.18) !important;
+            box-shadow: 0 10px 30px rgba(4, 16, 31, 0.18) !important;
+        }
+
+        header .max-w-7xl {
+            height: 82px !important;
+        }
+
+        header .flex.items-center.gap-3 > div:first-child {
+            width: 50px !important;
+            height: 50px !important;
+            border-radius: 12px !important;
+            background: var(--cream) !important;
+            color: var(--navy) !important;
+            border: 1px solid rgba(245, 238, 223, 0.75) !important;
+            box-shadow: none !important;
+        }
+
+        header h1 {
+            font-family: 'Outfit', sans-serif !important;
+            font-size: 1.55rem !important;
+            font-weight: 800 !important;
+            letter-spacing: 0.015em !important;
+        }
+
+        header h1 span {
+            color: var(--cream) !important;
+        }
+
+        header .text-\[10px\] {
+            color: var(--cream) !important;
+            background: transparent !important;
+            border-color: rgba(245, 238, 223, 0.35) !important;
+            letter-spacing: 0.14em !important;
+        }
+
+        header nav a,
+        header #mobile-menu a {
+            color: rgba(255,255,255,.82) !important;
+        }
+
+        header nav a:hover,
+        header #mobile-menu a:hover {
+            color: var(--cream) !important;
+        }
+
+        header a[href="#pledge"] {
+            background: var(--cream) !important;
+            color: var(--navy) !important;
+            border-radius: 8px !important;
+            box-shadow: none !important;
+            letter-spacing: .01em;
+        }
+
+        header a[href="#pledge"]:hover {
+            background: #fffaf0 !important;
+            transform: translateY(-1px) !important;
+        }
+
+        /* Remove decorative multicolor glow effects */
+        .hero-gradient > div[class*="blur"],
+        section.bg-navy-900 > div[class*="blur"] {
+            display: none !important;
+        }
+
+        /* Hero: solid institutional navy */
+        .hero-gradient {
+            background: var(--navy) !important;
+            border-color: rgba(245,238,223,.18) !important;
+        }
+
+        .hero-gradient .text-cream-400,
+        .hero-gradient .text-cream-500 {
+            color: var(--cream) !important;
+        }
+
+        /* Keep hero cards neutral and sophisticated */
+        .hero-gradient .bg-white {
+            background: var(--white) !important;
+            color: var(--ink) !important;
+            border-color: var(--cream-deep) !important;
+        }
+
+        /* Cream presentation surfaces */
+        .bg-navy-50\/60,
+        .bg-navy-50\/80,
+        .bg-navy-100\/70,
+        .bg-navy-100,
+        .bg-navy-200\/60,
+        .bg-navy-200\/70 {
+            background-color: var(--cream) !important;
+        }
+
+        /* All normal content sections use cream/white, not green/multicolor */
+        main, section {
+            border-color: var(--cream-deep) !important;
+        }
+
+        section:not(.hero-gradient):not(#village-day):not(#pledge) {
+            color: var(--ink);
+        }
+
+        /* Data and Baby Brain Matrix: explicitly cream with black text */
+        #data,
+        #baby-brain {
+            background: var(--cream) !important;
+            color: var(--ink) !important;
+            border-color: var(--cream-deep) !important;
+        }
+
+        #data *,
+        #baby-brain * {
+            border-color: var(--cream-deep);
+        }
+
+        #data h1, #data h2, #data h3, #data h4, #data h5, #data h6,
+        #baby-brain h1, #baby-brain h2, #baby-brain h3, #baby-brain h4, #baby-brain h5, #baby-brain h6,
+        #data p, #baby-brain p,
+        #data span, #baby-brain span {
+            color: var(--ink) !important;
+        }
+
+        #data .bg-white,
+        #baby-brain .bg-white {
+            background: #fffaf0 !important;
+            color: var(--ink) !important;
+        }
+
+        #data .bg-navy-50\/80,
+        #baby-brain .bg-navy-50\/80 {
+            background: var(--cream-deep) !important;
+            color: var(--ink) !important;
+        }
+
+        #data .text-navy-800,
+        #data .text-navy-900,
+        #data .text-navy-950,
+        #baby-brain .text-navy-800,
+        #baby-brain .text-navy-900,
+        #baby-brain .text-navy-950 {
+            color: var(--ink) !important;
+        }
+
+        /* Matrix selector and active states */
+        #age-selector button {
+            background: #fffaf0 !important;
+            color: var(--ink) !important;
+            border-color: #cfc3ad !important;
+        }
+
+        #age-selector button[class*="bg-navy-700"] {
+            background: var(--navy) !important;
+            color: var(--white) !important;
+            border-color: var(--navy) !important;
+        }
+
+        /* Pillars: restrained navy/cream */
+        #pillars {
+            background: var(--cream) !important;
+        }
+
+        #pillars-tabs button {
+            background: #fffaf0 !important;
+            color: var(--ink) !important;
+            border-color: #cfc3ad !important;
+        }
+
+        #pillars-tabs button[class*="bg-navy-700"] {
+            background: var(--navy) !important;
+            color: var(--white) !important;
+            border-color: var(--navy) !important;
+        }
+
+        /* Village Day is the single strong navy block */
+        #village-day {
+            background: var(--navy-deep) !important;
+            color: var(--white) !important;
+            border-color: var(--navy) !important;
+        }
+
+        #village-day .bg-white {
+            background: #fffaf0 !important;
+            color: var(--ink) !important;
+            border-color: var(--cream-deep) !important;
+        }
+
+        /* Pledge */
+        #pledge > div > div {
+            background: var(--navy) !important;
+            border-color: rgba(245,238,223,.25) !important;
+        }
+
+        #pledge button {
+            background: var(--cream) !important;
+            color: var(--navy) !important;
+        }
+
+        /* Number/icon blocks become one consistent navy */
+        .bg-navy-700,
+        .bg-navy-800,
+        .bg-navy-900,
+        .bg-navy-950 {
+            background-color: var(--navy) !important;
+        }
+
+        /* Cream is the only accent */
+        .text-cream-400,
+        .text-cream-500 {
+            color: var(--cream) !important;
+        }
+
+        /* Neutralize remaining text accents */
+        .text-navy-200,
+        .text-navy-300,
+        .text-navy-400 {
+            color: #334155 !important;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-deep) !important;
+            color: rgba(255,255,255,.72) !important;
+            border-color: var(--navy) !important;
+        }
+
+        footer h5,
+        footer .text-white {
+            color: var(--white) !important;
+        }
+
+        footer a:hover {
+            color: var(--cream) !important;
+        }
+
+        /* Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: var(--cream-deep) !important;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: var(--navy) !important;
+        }
+
+        /* Remove overly playful rounded/pill appearance from key navigation elements */
+        header .rounded-full {
+            border-radius: 6px !important;
+        }
+
+        /* Mobile nav */
+        #mobile-menu {
+            background: var(--navy-deep) !important;
+            border-color: rgba(245,238,223,.18) !important;
+        }
+
+        @media (max-width: 767px) {
+            header .max-w-7xl {
+                height: 72px !important;
+            }
+
+            header h1 {
+                font-size: 1.25rem !important;
+            }
+
+            header .flex.items-center.gap-3 > div:first-child {
+                width: 44px !important;
+                height: 44px !important;
+            }
+        }
+
+    </style>
+</head>
+<body class="bg-navy-50/60 text-slate-900 antialiased selection:bg-navy-600 selection:text-white">
+
+    <!-- Sticky Rich Forest Green Navigation Header -->
+    <header class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur-md border-b border-navy-800 text-white shadow-xl transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- NGO Logo & Main Branding -->
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-navy-500 to-navy-700 text-white flex items-center justify-center font-bold text-xl shadow-md border border-navy-400/40">
+                    <i class="fa-solid fa-hands-holding-child"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-black tracking-widest text-navy-200 uppercase bg-navy-800/80 px-2 py-0.5 rounded border border-navy-700">SEVA NILAYA NGO</span>
+                    </div>
+                    <h1 class="text-xl font-extrabold text-white tracking-tight leading-none mt-1">AARAMBH <span class="text-cream-400">1000</span></h1>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-navy-100">
+                <a href="#about" class="hover:text-cream-400 transition-colors">Overview</a>
+                <a href="#pillars" class="hover:text-cream-400 transition-colors">8 Pillars</a>
+                <a href="#baby-brain" class="hover:text-cream-400 transition-colors">Baby Brain Matrix</a>
+                <a href="#village-day" class="hover:text-cream-400 transition-colors">Village Day</a>
+                <a href="#data" class="hover:text-cream-400 transition-colors">Impact Data</a>
+                <a href="#roadmap" class="hover:text-cream-400 transition-colors">Roadmap</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div class="flex items-center gap-3">
+                <a href="#pledge" class="bg-cream-400 hover:bg-cream-500 text-slate-950 px-5 py-2.5 rounded-full font-extrabold text-sm transition-all transform hover:scale-105 shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-heart text-navy-950"></i>
+                    <span>Pledge Support</span>
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-white text-2xl focus:outline-none p-1">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-950 border-b border-navy-800 px-6 py-4 flex-col gap-3 font-semibold text-navy-100">
+            <a href="#about" class="mobile-nav-link py-2 border-b border-navy-900">Overview</a>
+            <a href="#pillars" class="mobile-nav-link py-2 border-b border-navy-900">8 Pillars</a>
+            <a href="#baby-brain" class="mobile-nav-link py-2 border-b border-navy-900">Baby Brain Matrix</a>
+            <a href="#village-day" class="mobile-nav-link py-2 border-b border-navy-900">Village Day</a>
+            <a href="#data" class="mobile-nav-link py-2 border-b border-navy-900">Impact Data</a>
+            <a href="#roadmap" class="mobile-nav-link py-2">Roadmap</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-gradient text-white relative overflow-hidden py-16 lg:py-24 border-b border-navy-800">
+        <!-- Background Glow Accents -->
+        <div class="absolute -top-12 -right-12 w-96 h-96 bg-navy-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-12 -left-12 w-96 h-96 bg-cream-400/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-navy-800/80 backdrop-blur-md px-4 py-2 rounded-full border border-navy-700 text-navy-200 text-xs sm:text-sm font-bold tracking-wide">
+                        <i class="fa-solid fa-seedling text-cream-400"></i>
+                        <span>First 1,000 Days Community Health Initiative</span>
+                    </div>
+
+                    <!-- Main Hero Text Requested: Heading AARAMBH 1000 + Tagline Subtitle -->
+                    <div class="space-y-3">
+                        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-none">
+                            AARAMBH <span class="text-cream-400">1000</span>
+                        </h1>
+                        <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-200 leading-tight">
+                            Healthy Mothers. Thriving Children. Happier Families.
+                        </p>
+                    </div>
+
+                    <p class="text-base sm:text-lg text-navy-100 max-w-2xl leading-relaxed">
+                        An institutional-grade NGO initiative by <strong>SEVA NILAYA</strong> bridging the critical window between pregnancy and a child's second birthday through evidence-based health, nutrition, responsive play, and maternal emotional wellbeing.
+                    </p>
+
+                    <!-- Core Program Stat Badges -->
+                    <div class="grid grid-cols-3 gap-4 pt-2 max-w-lg mx-auto lg:mx-0">
+                        <div class="bg-navy-900/80 backdrop-blur-md p-4 rounded-2xl border border-navy-700 text-center">
+                            <span class="block text-2xl lg:text-3xl font-black text-cream-400">10</span>
+                            <span class="text-[11px] text-navy-200 uppercase tracking-wider font-bold">Pilot Villages</span>
+                        </div>
+                        <div class="bg-navy-900/80 backdrop-blur-md p-4 rounded-2xl border border-navy-700 text-center">
+                            <span class="block text-2xl lg:text-3xl font-black text-cream-400">1,500</span>
+                            <span class="text-[11px] text-navy-200 uppercase tracking-wider font-bold">Households</span>
+                        </div>
+                        <div class="bg-navy-900/80 backdrop-blur-md p-4 rounded-2xl border border-navy-700 text-center">
+                            <span class="block text-2xl lg:text-3xl font-black text-cream-400">24</span>
+                            <span class="text-[11px] text-navy-200 uppercase tracking-wider font-bold">Months Scope</span>
+                        </div>
+                    </div>
+
+                    <!-- Call to action buttons -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#pillars" class="bg-navy-600 hover:bg-navy-500 text-white px-7 py-3.5 rounded-xl font-extrabold text-base shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center gap-2 border border-navy-400/30">
+                            <span>Explore 8 Pillars</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#village-day" class="bg-navy-950/80 hover:bg-navy-900 text-white border border-navy-700 px-7 py-3.5 rounded-xl font-bold text-base backdrop-blur-md transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-compass text-cream-400"></i>
+                            <span>Interactive Village Day</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic / Integrated Model Overlay -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white text-slate-800 p-8 rounded-3xl shadow-2xl border border-navy-200 relative">
+                        <div class="absolute -top-4 -right-4 bg-navy-700 text-white text-xs font-bold uppercase px-3 py-1.5 rounded-full shadow-lg border border-navy-500">
+                            Integrated NGO Model
+                        </div>
+
+                        <div class="flex items-center gap-4 border-b border-navy-100 pb-4 mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-navy-100 text-navy-800 flex items-center justify-center text-2xl font-bold">
+                                <i class="fa-solid fa-hands-holding-circle"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-lg text-slate-900">WHO Nurturing Care</h3>
+                                <p class="text-xs text-slate-500 font-medium">Grounded in GoI Navchetna Framework</p>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm font-semibold text-slate-700">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-navy-600 mt-1"></i>
+                                <span><strong>Non-Parallel System:</strong> Integrates directly with ASHAs, AWWs, & ANMs</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-navy-600 mt-1"></i>
+                                <span><strong>Signature Focus:</strong> Maternal Mental & Emotional Wellbeing Circles</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-navy-600 mt-1"></i>
+                                <span><strong>Household Engagement:</strong> Active role for Fathers & Grandparents</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-navy-600 mt-1"></i>
+                                <span><strong>6-Step Human Chain:</strong> Zero loss-to-follow-up operational methodology</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-6 pt-4 border-t border-navy-100 bg-navy-50/80 p-4 rounded-xl flex items-center justify-between text-xs font-bold text-navy-900">
+                            <span><i class="fa-solid fa-location-dot text-navy-700 mr-1"></i> Pilot: 10 Underserved Villages</span>
+                            <span class="text-navy-700 bg-white px-2 py-1 rounded border border-navy-200">Zero App Dependency</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Executive Overview -->
+    <section id="about" class="py-16 bg-white border-b border-navy-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-navy-800 font-bold uppercase text-xs tracking-wider bg-navy-100 px-3.5 py-1.5 rounded-full border border-navy-200">Executive Overview</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">Connecting Policy to the Rural Household</h2>
+                <p class="text-slate-600 mt-3 text-base">
+                    AARAMBH 1000 serves as the human layer between institutional healthcare policy (<em>Mission Poshan 2.0</em> & <em>NHM</em>) and everyday household practices during the window that defines human brain growth.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-navy-50/80 p-6 rounded-3xl border border-navy-200/80 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-navy-700 text-white flex items-center justify-center text-xl mb-4 font-black shadow-md">01</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">The Critical Window</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Over 80% of brain architecture forms before age two. Nutrition alone is not enough—responsive caregiving, play stimulation, and maternal mental health are non-negotiable pillars.
+                    </p>
+                </div>
+
+                <div class="bg-navy-50/80 p-6 rounded-3xl border border-navy-200/80 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-navy-700 text-white flex items-center justify-center text-xl mb-4 font-black shadow-md">02</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">The Human Layer</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Rather than creating parallel systems, NGO field facilitators mobilize Anganwadi centers, assist ASHA visits, and empower mothers directly in their home environments.
+                    </p>
+                </div>
+
+                <div class="bg-navy-50/80 p-6 rounded-3xl border border-navy-200/80 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-navy-700 text-white flex items-center justify-center text-xl mb-4 font-black shadow-md">03</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Maternal-Child Nexus</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        A child cannot thrive if the mother is exhausted or emotionally distressed. We directly integrate postpartum depression screenings and emotional support circles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Interactive 8 Pillars Showcase -->
+    <section id="pillars" class="py-16 bg-navy-50/60 border-b border-navy-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-navy-800 font-bold uppercase text-xs tracking-wider bg-navy-200/60 px-3.5 py-1 rounded-full border border-navy-300">Core Program Architecture</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">The 8 Aarambh Pillars</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                    Click any pillar below to explore its focus area, key operational activities, and targeted impact metrics.
+                </p>
+            </div>
+
+            <!-- Pillars Grid Selector -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" id="pillars-tabs">
+                <!-- Javascript populates dynamic active states -->
+            </div>
+
+            <!-- Pillar Detail Display Card -->
+            <div id="pillar-detail-card" class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-navy-200 transition-all">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: "Baby Brain" Age-Wise Stimulation Interactive Matrix -->
+    <section id="baby-brain" class="py-16 bg-white border-b border-navy-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-navy-800 font-bold uppercase text-xs tracking-wider bg-navy-100 px-3.5 py-1.5 rounded-full border border-navy-200">Navchetna Early Stimulation</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">"Baby Brain" Interactive Matrix</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                    Discover practical, zero-cost household play activities tailored to each age bracket to stimulate early cognitive and emotional development.
+                </p>
+            </div>
+
+            <!-- Age Bracket Selector -->
+            <div class="flex items-center justify-center gap-2 sm:gap-4 overflow-x-auto custom-scrollbar pb-4 mb-8" id="age-selector">
+                <!-- Tabs generated via JS -->
+            </div>
+
+            <!-- Matrix Content Box -->
+            <div id="baby-brain-content" class="bg-navy-50/80 p-6 sm:p-8 rounded-3xl border border-navy-200 shadow-sm">
+                <!-- Content generated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Interactive 8-Station Village Day Simulation -->
+    <section id="village-day" class="py-16 bg-navy-900 text-white relative overflow-hidden border-b border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-cream-400 font-bold uppercase text-xs tracking-wider bg-navy-800 px-3.5 py-1.5 rounded-full border border-navy-700">Monthly Community Event</span>
+                <h2 class="text-3xl font-extrabold text-white mt-3 sm:text-4xl">The 8-Station "Aarambh Village Day"</h2>
+                <p class="text-navy-100 mt-2 text-sm sm:text-base">
+                    Every month, mothers and families gather at the local Anganwadi Centre for a comprehensive health, nutrition, and play circuit. Click a station to tour the setup!
+                </p>
+            </div>
+
+            <!-- Horizontal Station Stepper -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 mb-8" id="village-stations-list">
+                <!-- Generated via JS -->
+            </div>
+
+            <!-- Station Detail Modal/Card -->
+            <div id="station-detail-display" class="bg-white text-slate-800 p-6 sm:p-8 rounded-3xl shadow-2xl transition-all border border-navy-200">
+                <!-- Content dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: NFHS-5 Context Data & Baseline Impact Visualizer -->
+    <section id="data" class="py-16 bg-white border-b border-navy-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-navy-800 font-bold uppercase text-xs tracking-wider bg-navy-100 px-3.5 py-1.5 rounded-full border border-navy-200">Evidence & Analytics</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">Baseline Indicators & 24-Month Ambitions</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                    National NFHS-5 indicators establish the urgent rationale, while AARAMBH 1000 sets targeted, empirical benchmarks across 10 pilot villages.
+                </p>
+            </div>
+
+            <!-- Comparison Metric Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="impact-metrics-grid">
+                <!-- Populated via JS -->
+            </div>
+
+            <div class="mt-8 bg-navy-50/80 p-5 rounded-2xl text-xs text-navy-950 flex items-start gap-3 border border-navy-200">
+                <i class="fa-solid fa-circle-info text-navy-700 text-base mt-0.5"></i>
+                <p class="leading-relaxed">
+                    <strong>Methodological Note:</strong> National NFHS-5 indicators establish the structural rationale. Each of the 10 pilot villages undergoes a localized Baseline Assessment (T₀) to establish empirical village-specific starting benchmarks, followed by mid-line (T₁) and endline (T₂) evaluation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: 6-Step Operational Chain -->
+    <section class="py-16 bg-navy-50/60 border-b border-navy-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-navy-800 font-bold uppercase text-xs tracking-wider bg-navy-200/60 px-3.5 py-1 rounded-full border border-navy-300">Zero Loss-To-Follow-Up Strategy</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">The 6-Step Operational Chain</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                    How field facilitators and frontline health workers systematically support every mother and child.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
+                <div class="bg-white p-5 rounded-2xl border border-navy-200 shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-navy-700 text-white font-black flex items-center justify-center mx-auto mb-3 shadow">1</div>
+                    <h4 class="font-extrabold text-slate-900 text-sm uppercase">Identify</h4>
+                    <p class="text-xs text-slate-600 mt-2">Map 100% eligible households & register pregnant women.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-navy-200 shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-navy-700 text-white font-black flex items-center justify-center mx-auto mb-3 shadow">2</div>
+                    <h4 class="font-extrabold text-slate-900 text-sm uppercase">Educate</h4>
+                    <p class="text-xs text-slate-600 mt-2">Culturally nuanced nutrition & play counseling.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-navy-200 shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-navy-700 text-white font-black flex items-center justify-center mx-auto mb-3 shadow">3</div>
+                    <h4 class="font-extrabold text-slate-900 text-sm uppercase">Support</h4>
+                    <p class="text-xs text-slate-600 mt-2">Mother Circles, Father sessions, & home visits.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-navy-200 shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-navy-700 text-white font-black flex items-center justify-center mx-auto mb-3 shadow">4</div>
+                    <h4 class="font-extrabold text-slate-900 text-sm uppercase">Connect</h4>
+                    <p class="text-xs text-slate-600 mt-2">Link directly to AWCs, VHSNDs, & PHC doctors.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-navy-200 shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-navy-700 text-white font-black flex items-center justify-center mx-auto mb-3 shadow">5</div>
+                    <h4 class="font-extrabold text-slate-900 text-sm uppercase">Follow Up</h4>
+                    <p class="text-xs text-slate-600 mt-2">Track referral completion & physical recovery.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-navy-200 shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-navy-700 text-white font-black flex items-center justify-center mx-auto mb-3 shadow">6</div>
+                    <h4 class="font-extrabold text-slate-900 text-sm uppercase">Measure</h4>
+                    <p class="text-xs text-slate-600 mt-2">Continuous KPI logging via physical Family Cards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: 24-Month Roadmap -->
+    <section id="roadmap" class="py-16 bg-white border-b border-navy-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-navy-800 font-bold uppercase text-xs tracking-wider bg-navy-100 px-3.5 py-1.5 rounded-full border border-navy-200">Implementation Timeline</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">24-Month Pilot Roadmap</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                    Structured rollout phases designed for rigorous village implementation and impact evaluation.
+                </p>
+            </div>
+
+            <div class="space-y-6 max-w-4xl mx-auto">
+                <!-- Phase 1 -->
+                <div class="flex flex-col sm:flex-row gap-4 bg-navy-50/80 p-6 rounded-2xl border border-navy-200 items-start">
+                    <div class="bg-navy-800 text-white font-black px-4 py-2 rounded-xl text-sm shrink-0 border border-navy-700 shadow-sm">
+                        Months 01–03
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Phase I: Preparation & Baseline Survey (T₀)</h4>
+                        <p class="text-sm text-slate-600 mt-1 leading-relaxed">Village selection based on criteria, stakeholder orientation, household mapping, baseline survey implementation, and training package adaptation.</p>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="flex flex-col sm:flex-row gap-4 bg-navy-50/80 p-6 rounded-2xl border border-navy-200 items-start">
+                    <div class="bg-navy-700 text-white font-black px-4 py-2 rounded-xl text-sm shrink-0 border border-navy-600 shadow-sm">
+                        Months 04–06
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Phase II: Capacity Building & Launch</h4>
+                        <p class="text-sm text-slate-600 mt-1 leading-relaxed">Joint workshops for NGO facilitators, ASHAs, and AWWs. Community inception meetings and initial household registration.</p>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="flex flex-col sm:flex-row gap-4 bg-navy-50/80 p-6 rounded-2xl border border-navy-200 items-start">
+                    <div class="bg-navy-900 text-white font-black px-4 py-2 rounded-xl text-sm shrink-0 border border-navy-800 shadow-sm">
+                        Months 07–18
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Phase III: Full Implementation</h4>
+                        <p class="text-sm text-slate-600 mt-1 leading-relaxed">Monthly Aarambh Village Days, Mother Circles, Father Workshops, home visits, growth monitoring, and continuous referral tracking.</p>
+                    </div>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="flex flex-col sm:flex-row gap-4 bg-navy-50/80 p-6 rounded-2xl border border-navy-200 items-start">
+                    <div class="bg-navy-700 text-white font-black px-4 py-2 rounded-xl text-sm shrink-0 border border-navy-600 shadow-sm">
+                        Months 19–21
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Phase IV: Consolidation & Mid-Course Refinement</h4>
+                        <p class="text-sm text-slate-600 mt-1 leading-relaxed">Mid-term evaluation (T₁), identifying coverage gaps, intensifying support for high-risk mother-child pairs.</p>
+                    </div>
+                </div>
+
+                <!-- Phase 5 -->
+                <div class="flex flex-col sm:flex-row gap-4 bg-navy-50/80 p-6 rounded-2xl border border-navy-200 items-start">
+                    <div class="bg-slate-900 text-white font-black px-4 py-2 rounded-xl text-sm shrink-0 shadow-sm">
+                        Months 22–24
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Phase V: Endline Evaluation (T₂) & Scale-Up Plan</h4>
+                        <p class="text-sm text-slate-600 mt-1 leading-relaxed">Comprehensive endline survey, dissemination of learnings to health departments, and formulation of expansion model (10 → 50 villages).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Safeguarding & Ethics -->
+    <section class="py-16 bg-navy-50/60 border-b border-navy-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-navy-800 font-bold uppercase text-xs tracking-wider bg-navy-200/60 px-3.5 py-1 rounded-full border border-navy-300">Ethical Guardrails</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">Programmatic Non-Negotiables</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                    Grounded in public health ethics, AARAMBH 1000 maintains strict principles to protect rural families.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded-2xl border border-navy-200 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
+                    <i class="fa-solid fa-ban text-navy-700 text-2xl mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">No Parallel System</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">We strengthen existing ASHAs, ANMs, and AWCs rather than replacing public infrastructure.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-navy-200 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
+                    <i class="fa-solid fa-mobile-xmark text-navy-700 text-2xl mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Zero App Dependency</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">Mothers interact via human care and physical Family Cards; no smartphone or digital access required.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-navy-200 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
+                    <i class="fa-solid fa-pills text-navy-700 text-2xl mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">No Unverified Foods</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">We promote locally available, affordable foods and government-sanctioned nutritional guidelines.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-navy-200 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
+                    <i class="fa-solid fa-user-doctor text-navy-700 text-2xl mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">No Medical Diagnosis</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">Facilitators screen and refer; medical diagnoses are strictly conducted by certified health officers.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-navy-200 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
+                    <i class="fa-solid fa-heart-circle-xmark text-navy-700 text-2xl mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Zero Mother Shaming</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">Empathy-first counseling supporting mothers in their unique circumstances without judgment.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-navy-200 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
+                    <i class="fa-solid fa-brain text-navy-700 text-2xl mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">No "Genius Baby" Claims</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">Focus is on developmental rights, physical health, and emotional security—not false academic promises.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Pledge Support Interactive Form -->
+    <section id="pledge" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 rounded-3xl p-8 sm:p-12 text-white text-center shadow-2xl relative overflow-hidden border border-navy-700">
+                <div class="relative z-10">
+                    <span class="uppercase tracking-widest text-xs font-bold text-cream-400 bg-navy-950/80 px-3.5 py-1.5 rounded-full border border-navy-700">Join the Movement</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-3">Pledge Support for the First 1,000 Days</h2>
+                    <p class="text-navy-100 mt-3 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+                        Stand with SEVA NILAYA to ensure every child and mother in our pilot villages receives the nutrition, health, and emotional care they deserve.
+                    </p>
+
+                    <!-- Interactive Pledge Form -->
+                    <form id="pledge-form" class="mt-8 max-w-md mx-auto space-y-4 text-left">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-navy-200 mb-1">Full Name</label>
+                            <input type="text" id="pledge-name" required placeholder="Enter your full name" class="w-full px-4 py-3 rounded-xl bg-white text-slate-900 placeholder-slate-400 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-cream-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-navy-200 mb-1">Email Address</label>
+                            <input type="email" id="pledge-email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl bg-white text-slate-900 placeholder-slate-400 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-cream-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-navy-200 mb-1">I am participating as a:</label>
+                            <select id="pledge-role" class="w-full px-4 py-3 rounded-xl bg-white text-slate-900 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-cream-400">
+                                <option value="Advocate">Public Health Advocate</option>
+                                <option value="Donor">Donor / CSR Partner</option>
+                                <option value="Community Member">Community Member</option>
+                                <option value="Healthcare Worker">Frontline Health Worker</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-cream-400 hover:bg-cream-500 text-slate-950 font-extrabold py-3.5 px-6 rounded-xl text-base transition-all transform hover:scale-105 shadow-xl flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-signature"></i>
+                            <span>Sign the Pledge</span>
+                        </button>
+                    </form>
+
+                    <!-- Pledge Confirmation Counter -->
+                    <div id="pledge-success" class="hidden mt-6 bg-navy-950/80 backdrop-blur-md p-6 rounded-2xl border border-navy-700 text-center">
+                        <i class="fa-solid fa-circle-check text-cream-400 text-3xl mb-2"></i>
+                        <h4 class="font-bold text-xl text-white">Thank you for standing with Aarambh 1000!</h4>
+                        <p class="text-xs text-navy-200 mt-1">Your pledge has been logged. Together, we build healthier futures.</p>
+                    </div>
+
+                    <div class="mt-6 text-xs text-navy-200">
+                        <span id="pledge-counter" class="font-black text-cream-400 text-sm">1,248</span> Community Supporters Have Signed
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-navy-300 py-12 border-t border-navy-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 text-white mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-navy-700 text-white flex items-center justify-center font-bold text-lg border border-navy-500">
+                            <i class="fa-solid fa-hands-holding-child"></i>
+                        </div>
+                        <span class="font-extrabold text-xl tracking-tight">SEVA NILAYA</span>
+                    </div>
+                    <p class="text-xs text-navy-300 max-w-sm leading-relaxed">
+                        AARAMBH 1000 — First 1,000 Days Community Health, Nutrition & Family Wellbeing Programme. Grounded in the WHO Nurturing Care Framework & GoI Navchetna Guidelines.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Quick Navigation</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#about" class="hover:text-cream-400 transition-colors">Program Overview</a></li>
+                        <li><a href="#pillars" class="hover:text-cream-400 transition-colors">8 Aarambh Pillars</a></li>
+                        <li><a href="#baby-brain" class="hover:text-cream-400 transition-colors">Baby Brain Matrix</a></li>
+                        <li><a href="#village-day" class="hover:text-cream-400 transition-colors">Aarambh Village Day</a></li>
+                        <li><a href="#data" class="hover:text-cream-400 transition-colors">Baseline Indicators</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Public Health Alignment</h5>
+                    <ul class="space-y-2 text-xs text-navy-300">
+                        <li>Mission Saksham Anganwadi & Poshan 2.0</li>
+                        <li>National Health Mission (NHM)</li>
+                        <li>Village Health Sanitation & Nutrition Day (VHSND)</li>
+                        <li>ICDS & Anganwadi Services</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-navy-900 text-center text-xs text-navy-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>&copy; 2026 SEVA NILAYA NGO. All Rights Reserved.</p>
+                <p>Pure Community Health & Early Childhood Development Initiative.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT INTERACTION LOGIC -->
+    <script>
+        // Data Structures
+        const pillarsData = [
+            {
+                id: 'maa',
+                name: 'Maa Aarambh',
+                subtitle: 'Maternal Health',
+                icon: 'fa-user-nurse',
+                focus: 'Comprehensive antenatal care, birth preparedness, and maternal recovery.',
+                activities: [
+                    'Early pregnancy registration support with ASHAs',
+                    '4+ Antenatal Care (ANC) contact tracking & IFA adherence',
+                    'Danger-sign awareness & institutional delivery preparedness',
+                    'Postnatal follow-up visits covering physical recovery & newborn screening'
+                ],
+                impact: 'Reduced pregnancy risks & maternal anaemia burden.'
+            },
+            {
+                id: 'poshan',
+                name: 'Poshan Aarambh',
+                subtitle: 'Mother & Child Nutrition',
+                icon: 'fa-bowl-rice',
+                focus: 'Optimal dietary diversity, breastfeeding, and age-appropriate feeding.',
+                activities: [
+                    'Local food mapping & cooking demonstrations',
+                    'Exclusive breastfeeding support (0–6 months)',
+                    'Timely complementary feeding guidance (6–23 months)',
+                    'Growth monitoring linkage at Anganwadi Centres'
+                ],
+                impact: 'Improved Minimum Dietary Diversity & reduced growth faltering.'
+            },
+            {
+                id: 'baby',
+                name: 'Baby Aarambh',
+                subtitle: 'Newborn & Child Health',
+                icon: 'fa-baby',
+                focus: 'Preventive healthcare, essential immunizations, and rapid triage.',
+                activities: [
+                    'Complete routine immunization tracking',
+                    'Diarrhea & pneumonia prevention counseling',
+                    'Hygiene & safe water practices in households',
+                    'Timely referral for sick newborns to PHCs'
+                ],
+                impact: 'Lower infant morbidity & high immunization coverage.'
+            },
+            {
+                id: 'khel',
+                name: 'Khel Aarambh',
+                subtitle: 'Play & Early Development',
+                icon: 'fa-shapes',
+                focus: 'Responsive stimulation using GoI Navchetna ECD framework.',
+                activities: [
+                    'Age-wise "Talk, Sing, Read, Play, Touch" activities',
+                    'Zero-cost toy making from safe household items',
+                    'Interactive parent-child play sessions',
+                    'Early identification of developmental delays'
+                ],
+                impact: 'Stronger cognitive, motor, and socio-emotional foundations.'
+            },
+            {
+                id: 'mann',
+                name: 'Mann Aarambh',
+                subtitle: 'Maternal Emotional Wellbeing',
+                icon: 'fa-heart-pulse',
+                focus: 'Destigmatizing & supporting maternal mental health and postpartum distress.',
+                activities: [
+                    'Monthly Mother Circles (10–15 mothers) for peer sharing',
+                    'Guided conversations on stress, sleep, and exhaustion',
+                    'Non-diagnostic emotional wellbeing check-ins',
+                    'Established medical referral protocols for severe distress'
+                ],
+                impact: 'Enhanced maternal coping capacity & responsive caregiving.'
+            },
+            {
+                id: 'parivar',
+                name: 'Parivar Aarambh',
+                subtitle: 'Family & Male Engagement',
+                icon: 'fa-people-roof',
+                focus: 'Engaging fathers and grandparents in shared household caregiving.',
+                activities: [
+                    'Monthly "Father\'s 30 Minutes" practical workshops',
+                    'Grandparent dialogue on tradition + evidence-based care',
+                    'Rebalancing domestic workload during pregnancy/lactation',
+                    'Active paternal involvement in child play & feeding'
+                ],
+                impact: 'Equitable home environment & stronger family support.'
+            },
+            {
+                id: 'gaon',
+                name: 'Gaon Aarambh',
+                subtitle: 'Village Mobilisation',
+                icon: 'fa-building-columns',
+                focus: 'Strengthening community institutions & Village Health Days.',
+                activities: [
+                    'Monthly 8-Station Aarambh Village Day coordination',
+                    'Gram Panchayat orientation & community champion advocacy',
+                    'Addressing local myths & cultural barriers',
+                    'Strengthening VHSND community participation'
+                ],
+                impact: 'Community ownership & sustained health awareness.'
+            },
+            {
+                id: 'seva',
+                name: 'Seva Aarambh',
+                subtitle: 'Service & Health Linkage',
+                icon: 'fa-hand-holding-medical',
+                focus: 'Connecting households seamlessly to public health services.',
+                activities: [
+                    'Active coordination with ASHAs, AWWs, and ANMs',
+                    'Referral tracking to Primary Health Centres (PHCs)',
+                    'Support for Poshan Vatika (Kitchen Garden) setup',
+                    'Zero parallel database duplication'
+                ],
+                impact: 'Enhanced public health utilization & system convergence.'
+            }
+        ];
+
+        const babyBrainData = [
+            {
+                age: '0–3m',
+                stage: 'Connect',
+                focus: 'Visual tracking, gentle touch, and responsive bonding.',
+                activities: [
+                    { title: 'Eye Contact & Smiling', desc: 'Hold baby 8–12 inches away, make warm eye contact, and smile whenever talking.' },
+                    { title: 'Soft Singing & Speaking', desc: 'Sing local lullabies and talk gently about your daily actions.' },
+                    { title: 'Gentle Touch & Holding', desc: 'Skin-to-skin contact, gentle massage, and holding securely during feeding.' },
+                    { title: 'Crying Response', desc: 'Respond promptly to cries to build emotional trust and safety.' }
+                ]
+            },
+            {
+                age: '3–6m',
+                stage: 'Interact',
+                focus: 'Vocal interactions, tummy time, and reaching.',
+                activities: [
+                    { title: 'Tummy Time Play', desc: 'Place baby on tummy while awake; place a bright cloth in front to encourage lifting head.' },
+                    { title: 'Sound Games', desc: 'Imitate baby’s cooing sounds (e.g., "ba-ba", "ma-ma") and wait for them to respond.' },
+                    { title: 'Reaching Practice', desc: 'Hold a clean rattle or plastic cup just out of reach to encourage grasping.' },
+                    { title: 'Facial Expressions', desc: 'Make funny faces and hide eyes behind hands for early peek-a-boo.' }
+                ]
+            },
+            {
+                age: '6–12m',
+                stage: 'Explore',
+                focus: 'Movement, object manipulation, and naming.',
+                activities: [
+                    { title: 'Peek-a-Boo', desc: 'Hide objects under a small cloth and encourage baby to pull the cloth off.' },
+                    { title: 'Naming Objects', desc: 'Point to everyday household items (spoon, bowl, tree) and say their names clearly.' },
+                    { title: 'Household Rhythm', desc: 'Bang soft wooden spoons on plastic bowls together to explore sounds and rhythm.' },
+                    { title: 'Safe Crawling Spaces', desc: 'Create a clean floor area where baby can safely crawl and explore.' }
+                ]
+            },
+            {
+                age: '12–18m',
+                stage: 'Communicate',
+                focus: 'Language building, simple choices, and physical imitation.',
+                activities: [
+                    { title: 'Picture & Story Time', desc: 'Look at simple picture books or photos together, pointing and describing.' },
+                    { title: 'Simple Instructions', desc: 'Give gentle 1-step requests like "Bring the ball" or "Give to Papa".' },
+                    { title: 'Imitation Games', desc: 'Clap hands, wave bye-bye, and encourage child to copy your movements.' },
+                    { title: 'Outdoor Discovery', desc: 'Touch leaves, feel sand, and point to birds outdoors.' }
+                ]
+            },
+            {
+                age: '18–24m',
+                stage: 'Discover',
+                focus: 'Pretend play, storytelling, and emotion identification.',
+                activities: [
+                    { title: 'Pretend Play', desc: 'Pretend to cook with plastic cups or care for a cloth doll together.' },
+                    { title: 'Naming Feelings', desc: 'Help child label feelings: "You are happy!" or "Are you tired?"' },
+                    { title: 'Sorting Games', desc: 'Sort big leaves vs small leaves, or red cups vs green cups.' },
+                    { title: 'Interactive Storytelling', desc: 'Ask simple questions during stories: "Where is the dog going?"' }
+                ]
+            }
+        ];
+
+        const stationData = [
+            { id: 1, title: 'Station 1: Maa Aarambh', icon: 'fa-user-nurse', focus: 'Maternal Health Check & ANC Linkage', activity: 'Checking ANC cards, monitoring IFA tablet adherence, birth preparedness planning, and scheduling ANM check-ups.' },
+            { id: 2, title: 'Station 2: Poshan Aarambh', icon: 'fa-bowl-rice', focus: 'Nutrition & Local Food Demo', activity: 'Live demonstrations of nutrient-dense recipes using affordable local millets, greens, and pulses.' },
+            { id: 3, title: 'Station 3: Growth Monitor', icon: 'fa-weight-scale', focus: 'Weight & Height Tracking', activity: 'Joint growth monitoring with Anganwadi Worker; logging weight on WHO growth charts to catch faltering early.' },
+            { id: 4, title: 'Station 4: Seva Linkage', icon: 'fa-syringe', focus: 'Immunization & Health Referrals', activity: 'Verifying immunization cards with ASHA; issuing direct referrals to PHC for missed vaccines or illness.' },
+            { id: 5, title: 'Station 5: Khel Aarambh', icon: 'fa-shapes', focus: 'Child Development & Play Corner', activity: 'Guided parent-child play sessions using GoI Navchetna play materials and homemade zero-cost toys.' },
+            { id: 6, title: 'Station 6: Mann Aarambh', icon: 'fa-heart-pulse', focus: 'Mother Emotional Wellbeing Check', activity: 'Peer-led quiet corner for new mothers to discuss exhaustion, postpartum mood, and receive empathetic support.' },
+            { id: 7, title: 'Station 7: Parivar Aarambh', icon: 'fa-people-roof', focus: 'Father & Grandparent Engagement', activity: 'Group dialogue on sharing caregiving tasks, supporting maternal nutrition, and dispelling harmful myths.' },
+            { id: 8, title: 'Station 8: Poshan Vatika', icon: 'fa-seedling', focus: 'Kitchen Garden & Local Food Guidance', activity: 'Distribution of seasonal vegetable seeds and practical guidance on maintaining household kitchen gardens.' }
+        ];
+
+        const metricsData = [
+            { title: 'Children Stunted (<5 yrs)', nfhs: '35.5%', target: 'Measurable Faltering Reduction', icon: 'fa-chart-line-down', desc: 'Targeting zero growth faltering through early tracking.' },
+            { title: 'Pregnant Women Anaemic', nfhs: '52.2%', target: '+15% IFA Adherence', icon: 'fa-vial', desc: 'Systematic IFA counseling & local iron-rich foods.' },
+            { title: 'Exclusive Breastfeeding (<6m)', nfhs: '63.7%', target: '+10 Percentage Points', icon: 'fa-person-breastfeeding', desc: 'Peer-led breastfeeding support circles.' },
+            { title: 'Minimum Diet Diversity (6–23m)', nfhs: '11.3%', target: '+15 Percentage Points', icon: 'fa-plate-wheat', desc: 'Promoting 4+ food groups daily.' },
+            { title: 'Mothers with 4+ ANC Visits', nfhs: '58.1%', target: '+15 Percentage Points', icon: 'fa-notes-medical', desc: 'ASHA joint tracking & birth preparedness.' },
+            { title: 'Responsive Caregiving Adherence', nfhs: 'Baseline Assessment', target: '≥70% Households', icon: 'fa-child-reaching', desc: 'Daily play & talking recorded on Family Cards.' }
+        ];
+
+        // Render 8 Pillars
+        let currentPillar = 0;
+        function renderPillars() {
+            const tabsContainer = document.getElementById('pillars-tabs');
+            tabsContainer.innerHTML = pillarsData.map((p, index) => `
+                <button onclick="selectPillar(${index})" class="p-3.5 rounded-2xl font-bold text-xs sm:text-sm text-left transition-all flex items-center gap-2.5 border ${
+                    index === currentPillar 
+                    ? 'bg-navy-700 text-white border-navy-700 shadow-md transform scale-[1.02]' 
+                    : 'bg-white text-slate-800 border-navy-200 hover:bg-navy-100/60'
+                }">
+                    <i class="fa-solid ${p.icon} text-base ${index === currentPillar ? 'text-cream-400' : 'text-navy-700'}"></i>
+                    <span class="truncate">${p.name}</span>
+                </button>
+            `).join('');
+
+            const detailContainer = document.getElementById('pillar-detail-card');
+            const active = pillarsData[currentPillar];
+            detailContainer.innerHTML = `
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="inline-flex items-center gap-2 bg-navy-100 text-navy-900 px-3 py-1 rounded-full text-xs font-bold uppercase border border-navy-200">
+                            <i class="fa-solid ${active.icon} text-navy-700"></i>
+                            <span>${active.subtitle}</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">${active.name}</h3>
+                        <p class="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">${active.focus}</p>
+                        
+                        <div class="pt-2">
+                            <h4 class="text-xs font-bold text-navy-800 uppercase tracking-wider mb-2">Key Operational Activities</h4>
+                            <ul class="space-y-2">
+                                ${active.activities.map(act => `
+                                    <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 font-medium">
+                                        <i class="fa-solid fa-check text-navy-600 mt-1"></i>
+                                        <span>${act}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 bg-navy-50/80 p-6 rounded-2xl border border-navy-200 text-center">
+                        <div class="w-16 h-16 rounded-2xl bg-navy-700 text-white flex items-center justify-center text-3xl mx-auto mb-4 shadow-lg border border-navy-600">
+                            <i class="fa-solid ${active.icon}"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Targeted Impact</span>
+                        <p class="text-base font-extrabold text-slate-900 mt-1">${active.impact}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectPillar(index) {
+            currentPillar = index;
+            renderPillars();
+        }
+
+        // Render Baby Brain Matrix
+        let currentAge = 0;
+        function renderBabyBrain() {
+            const selector = document.getElementById('age-selector');
+            selector.innerHTML = babyBrainData.map((b, idx) => `
+                <button onclick="selectAge(${idx})" class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border ${
+                    idx === currentAge
+                    ? 'bg-navy-700 text-white border-navy-700 shadow-md'
+                    : 'bg-navy-100/70 text-slate-800 border-navy-200 hover:bg-navy-200/60'
+                }">
+                    ${b.age} (${b.stage})
+                </button>
+            `).join('');
+
+            const content = document.getElementById('baby-brain-content');
+            const active = babyBrainData[currentAge];
+            content.innerHTML = `
+                <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-6 border-b border-navy-200 gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-navy-800 uppercase tracking-widest">Age Window: ${active.age}</span>
+                        <h3 class="text-2xl font-extrabold text-slate-900 mt-1">Focus: ${active.stage}</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">${active.focus}</p>
+                    </div>
+                    <div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-navy-200 text-xs font-bold text-navy-800 shrink-0 shadow-sm">
+                        <i class="fa-solid fa-brain text-navy-600"></i>
+                        <span>Navchetna Early Stimulation</span>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                    ${active.activities.map(act => `
+                        <div class="bg-white p-5 rounded-2xl border border-navy-200 shadow-sm hover:shadow-md transition-shadow">
+                            <h4 class="font-extrabold text-slate-900 text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-star text-cream-500 text-xs"></i>
+                                <span>${act.title}</span>
+                            </h4>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">${act.desc}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function selectAge(idx) {
+            currentAge = idx;
+            renderBabyBrain();
+        }
+
+        // Render Village Day Stations
+        let currentStation = 0;
+        function renderVillageDay() {
+            const list = document.getElementById('village-stations-list');
+            list.innerHTML = stationData.map((s, idx) => `
+                <button onclick="selectStation(${idx})" class="p-3 rounded-2xl font-extrabold text-xs text-center transition-all border ${
+                    idx === currentStation
+                    ? 'bg-cream-400 text-slate-950 border-cream-400 shadow-lg transform scale-105'
+                    : 'bg-navy-950/70 text-white border-navy-700 hover:bg-navy-800'
+                }">
+                    <i class="fa-solid ${s.icon} block text-base mb-1"></i>
+                    <span class="block truncate">Station ${s.id}</span>
+                </button>
+            `).join('');
+
+            const display = document.getElementById('station-detail-display');
+            const active = stationData[currentStation];
+            display.innerHTML = `
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-navy-100 pb-4 mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-navy-100 text-navy-800 flex items-center justify-center text-xl font-bold border border-navy-200">
+                            <i class="fa-solid ${active.icon}"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-navy-800 uppercase tracking-wider">Station ${active.id} Circuit</span>
+                            <h3 class="text-xl font-extrabold text-slate-900">${active.title}</h3>
+                        </div>
+                    </div>
+                    <span class="bg-navy-50 text-navy-800 text-xs font-bold px-3 py-1.5 rounded-full border border-navy-200">
+                        <i class="fa-solid fa-users mr-1 text-navy-700"></i> Frontline Integration: ASHA + AWW + ANM
+                    </span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Primary Objective</h4>
+                        <p class="font-bold text-slate-800">${active.focus}</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">On-Site Activity</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">${active.activity}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectStation(idx) {
+            currentStation = idx;
+            renderVillageDay();
+        }
+
+        // Render Impact Metrics
+        function renderMetrics() {
+            const grid = document.getElementById('impact-metrics-grid');
+            grid.innerHTML = metricsData.map(m => `
+                <div class="bg-navy-50/70 p-6 rounded-3xl border border-navy-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">${m.title}</span>
+                        <i class="fa-solid ${m.icon} text-navy-700 text-lg"></i>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2 bg-white p-3 rounded-2xl border border-navy-200 text-center mb-3">
+                        <div>
+                            <span class="block text-[10px] font-bold text-slate-400 uppercase">NFHS-5 Base</span>
+                            <span class="text-base font-black text-slate-800">${m.nfhs}</span>
+                        </div>
+                        <div class="border-l border-navy-100">
+                            <span class="block text-[10px] font-bold text-navy-800 uppercase">Aarambh Target</span>
+                            <span class="text-base font-black text-navy-700">${m.target}</span>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-slate-600 leading-relaxed">${m.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        // Mobile Navigation Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+            });
+        });
+
+        // Pledge Form Submission Logic
+        document.getElementById('pledge-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const form = document.getElementById('pledge-form');
+            const success = document.getElementById('pledge-success');
+            const counter = document.getElementById('pledge-counter');
+            
+            form.classList.add('hidden');
+            success.classList.remove('hidden');
+            
+            let current = parseInt(counter.innerText.replace(',', ''));
+            counter.innerText = (current + 1).toLocaleString();
+        });
+
+        // Initialize Dynamic Modules on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderPillars();
+            renderBabyBrain();
+            renderVillageDay();
+            renderMetrics();
+        });
+    </script>
+</body>
+</html>
